@@ -1,6 +1,8 @@
 import dto.Triangle
 import org.junit.jupiter.api.Test
+import service.TriangleServiceImpl
 import java.math.BigDecimal
+import kotlin.test.assertEquals
 
 internal class SampleTest {
 
@@ -10,8 +12,11 @@ internal class SampleTest {
 
     val triangle = Triangle(a,b,c)
 
+    val triangleService = TriangleServiceImpl()
+
     @Test
     fun demoTest(){
-
+        val expected = 84.0
+        assertEquals(expected, triangleService.getArea(triangle))
     }
 }
